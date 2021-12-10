@@ -1,0 +1,40 @@
+body {
+    background-color: darkslateblue;
+    margin-top: 100px;
+}
+
+div.content {
+    background-color: white;
+    border-radius: 20px;
+    width: max-content;
+    margin: auto;
+    padding: 60px 100px 100px 100px;
+}
+
+td.cell {
+    align-items: center;
+    padding: 5px 20px 5px 20px;
+}
+
+.cell p {
+    margin: 0px;
+    text-align: center;
+}
+
+.cell div {
+    margin: 0px;
+    text-align: center;
+}
+
+.validacao {
+    color: red;
+}
+
+.cell h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+a {
+    color: black;
+}

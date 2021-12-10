@@ -1,0 +1,48 @@
+body {
+    background-color: darkslateblue;
+}
+
+div.content {
+    background-color: white;
+    border-radius: 20px;
+    width: max-content;
+    margin-top: 50px;
+    float: left;
+    padding: 60px 50px 100px 50px;
+    
+}
+
+div.userHeader {
+    width: 100%;
+}
+
+div.produtos {
+    float: left;
+    width: max-content;
+    padding: 50px;
+    margin-top: 50px;
+}
+
+div.combo {
+    float: left;
+    width: max-content;
+}
+
+td.cell {
+    align-items: center;
+    padding: 5px 20px 5px 20px;
+}
+
+.cell p {
+    margin: 0px;
+    text-align: center;
+}
+
+.cell h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h1, h2, h3 {
+    color: white;
+}
