@@ -40,23 +40,40 @@
         <td class="cell" style='border-bottom: solid black 1px;'><p>Produto</p></td>
         <td class="cell" style='border-bottom: solid black 1px;'><p>Quantidade</p></td>
         <td class="cell" style='border-bottom: solid black 1px;'><p>Preço</p></td>
+        <td class="cell" style='border-bottom: solid black 1px;'><p></p></td>
+        <td class="cell" style='border-bottom: solid black 1px;'><p onclick="enviaEmail()">Enviar e-mail</p></td>
     </tr>
 
 </table>
 </form>
 
 <script>
+let nome, cat;
+
+function enviaEmail() {
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+        if (this.readyState==4 && this.status==200) {
+        }      
+    }
+    xmlhttp.open("GET", "serverside/email.asp?nome=" + nome + "&cat=" + cat , true);
+    xmlhttp.send();
+}
 
 function BuscaProdutos(e) {
     e.preventDefault();
+    nome = document.forms["busca"]["nome"].value;
+    cat = document.forms["busca"]["cat"].value;
 
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange=function() {
         if (this.readyState==4 && this.status==200) {
             document.querySelector(".displayer").innerHTML += this.responseText;
+            document.forms["busca"]["nome"].value = nome;
+            document.forms["busca"]["cat"].value = cat;
         }      
     }
-    xmlhttp.open("GET", "serverside/busca.asp?nome=" + document.forms["busca"]["nome"].value + "&cat=" + document.forms["busca"]["cat"].value, true);
+    xmlhttp.open("GET", "serverside/busca.asp?nome=" + nome + "&cat=" + cat , true);
     xmlhttp.send();
 
     for (let obj of document.querySelectorAll(".resultado")) {
